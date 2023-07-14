@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calculator {
+  width: 250px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#result {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 20px;
+  text-align: right;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  background-color: #e6e6e6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #d9d9d9;
+}
+
+.operator {
+  background-color: #ff9900;
+  color: #fff;
+}
+
+.clear {
+  background-color: #ff3333;
+  color: #fff;
+}
+
+.equal {
+  background-color: #3399ff;
+  color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" readonly placeholder="0">
+        <div class="keypad">
+          <button value="7" onclick="return input(this.value)">7</button>
+          <button value="8" onclick="return input(this.value)">8</button>
+          <button value="9" onclick="return input(this.value)">9</button>
+          <!-- operator -->
+
+          <button class="operator"  value="+" onclick="return input(this.value)">+</button>
+
+          <button value="4" onclick="return input(this.value)">4</button>
+          <button value="5" onclick="return input(this.value)">5</button>
+          <button value="6" onclick="return input(this.value)">6</button>
+
+          <button class="operator" value="-" onclick="return input(this.value)">-</button>
+
+          <button value="1" onclick="return input(this.value)">1</button>
+          <button value="2" onclick="return input(this.value)">2</button>
+          <button value="3" onclick="return input(this.value)">3</button>
+
+          <button class="operator" value="*" onclick="return input(this.value)">*</button>
+
+          <button class="clear" onclick="return cl(this.value)">C</button>
+          <button value="0" onclick="return input(this.value)">0</button>
+
+          <button class="equal" onclick="return ad(this.value)">=</button>
+
+          <button class="operator" value="/" onclick="return input(this.value)">/</button>
+
+          <button class="operator" onclick="return del(this.value)">del</button>
+        </div>
+      </div>
+      <script>
+
+        function input(val)
+        {
+            var a=document.getElementById("result").value+=val;
+        }
+        function cl()
+        {
+            var a=document.getElementById("result").value="";
+        }
+        function ad()
+        {
+             var a=document.getElementById("result").value;
+            var b=eval(a);
+          var d=document.getElementById("result").value=+b;
+        }
+        function del()
+        {
+          var a=document.getElementById("result").value;
+          var c=a.slice(0,-1);
+        }
+      
+       
+      </script>
+      
+</body>
+</html>
