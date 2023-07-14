@@ -86,13 +86,31 @@ button:hover {
           <button class="operator" value="*" onclick="return input(this.value)">*</button>
 
           <button class="clear" onclick="return cl(this.value)">C</button>
+
+          <button class="operator" onclick="return del(this.value)">del</button>
+
+
           <button value="0" onclick="return input(this.value)">0</button>
 
-          <button class="equal" onclick="return ad(this.value)">=</button>
 
           <button class="operator" value="/" onclick="return input(this.value)">/</button>
 
-          <button class="operator" onclick="return del(this.value)">del</button>
+
+          <button class="operator" onclick="return sq(this.value)">x<sup>2</sup></button>
+
+          <button class="operator" onclick="return sqr(this.value)">√</button>
+          
+          <button value="." class="operator" onclick="return input(this.value)">.</button>
+
+          <button class="equal" onclick="return ad(this.value)">=</button>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <script>
@@ -115,6 +133,20 @@ button:hover {
         {
           var a=document.getElementById("result").value;
           var c=a.slice(0,-1);
+          var d=document.getElementById("result").value=c;
+          
+        }
+        function sq()
+        {
+          var a=document.getElementById("result").value;
+          var c=Math.pow(a,2);
+          var ff=document.getElementById("result").value=c;
+        }
+        function sqr()
+        {
+           var a=document.getElementById("result").value;
+           var c=Math.sqrt(a);
+           var ff=document.getElementById("result").value=c;
         }
       
        
